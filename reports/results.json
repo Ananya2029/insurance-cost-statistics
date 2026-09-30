@@ -1,0 +1,142 @@
+{
+  "n": 1337,
+  "duplicates_removed": 1,
+  "smoker": {
+    "mean_smoker": 32050.23183153284,
+    "mean_non": 8440.660306508937,
+    "median_smoker": 34456.348450000005,
+    "median_non": 7345.7266,
+    "welch_p": 6.261720774727432e-103,
+    "mw_p": 5.74701188239214e-130,
+    "cohens_d": 3.1602902766581225,
+    "rank_biserial": 0.9491660429441533,
+    "median_diff_ci": [
+      22182.9380375,
+      28876.16185375
+    ],
+    "n_smokers": 274
+  },
+  "sex": {
+    "mean_male": 13974.998863762965,
+    "mean_female": 12569.578843835347,
+    "welch_p": 0.03356154763676583,
+    "mw_p": 0.6944793894954917,
+    "smoking_rate_male": 0.23555555555555555,
+    "smoking_rate_female": 0.17371601208459214,
+    "chi2_p": 0.005098746217145681,
+    "cramers_v": 0.07659585039335848
+  },
+  "region": {
+    "kruskal_p": 0.20161983372303882,
+    "anova_log_p": 0.2507849758595473,
+    "eta_squared": 0.0030704802435329516,
+    "tukey_significant_pairs": 0
+  },
+  "corr": {
+    "age": {
+      "spearman": 0.5335232787189862,
+      "pearson": 0.29830821250978634
+    },
+    "bmi": {
+      "spearman": 0.11958495819244366,
+      "pearson": 0.19840083122624938
+    },
+    "children": {
+      "spearman": 0.13220013322835855,
+      "pearson": 0.0673893508396325
+    }
+  },
+  "interaction_means": {
+    "smoker=no, obese=0": 7977.0,
+    "smoker=no, obese=1": 8856.0,
+    "smoker=yes, obese=0": 21363.0,
+    "smoker=yes, obese=1": 41558.0
+  },
+  "model_comparison": [
+    {
+      "model": "A: log(charges), main effects",
+      "adj. R\u00b2 (own scale)": 0.766,
+      "CV RMSE ($)": 9580.42
+    },
+    {
+      "model": "B: charges, main effects",
+      "adj. R\u00b2 (own scale)": 0.749,
+      "CV RMSE ($)": 6105.194
+    },
+    {
+      "model": "C: charges, smoker \u00d7 obese interaction",
+      "adj. R\u00b2 (own scale)": 0.862,
+      "CV RMSE ($)": 4498.053
+    }
+  ],
+  "final_coefficients": {
+    "Intercept": {
+      "coefficient ($)": -1952.786,
+      "95% CI low": -2913.983,
+      "95% CI high": -991.589,
+      "p-value": 0.0
+    },
+    "C(sex)[T.male]": {
+      "coefficient ($)": -478.576,
+      "95% CI low": -968.259,
+      "95% CI high": 11.106,
+      "p-value": 0.055
+    },
+    "C(region)[T.northwest]": {
+      "coefficient ($)": -276.177,
+      "95% CI low": -1015.579,
+      "95% CI high": 463.225,
+      "p-value": 0.464
+    },
+    "C(region)[T.southeast]": {
+      "coefficient ($)": -587.516,
+      "95% CI low": -1294.171,
+      "95% CI high": 119.139,
+      "p-value": 0.103
+    },
+    "C(region)[T.southwest]": {
+      "coefficient ($)": -1160.786,
+      "95% CI low": -1855.181,
+      "95% CI high": -466.392,
+      "p-value": 0.001
+    },
+    "C(smoker)[T.yes]": {
+      "coefficient ($)": 13360.084,
+      "95% CI low": 12593.128,
+      "95% CI high": 14127.04,
+      "p-value": 0.0
+    },
+    "age": {
+      "coefficient ($)": 265.413,
+      "95% CI low": 248.028,
+      "95% CI high": 282.799,
+      "p-value": 0.0
+    },
+    "children": {
+      "coefficient ($)": 523.525,
+      "95% CI low": 334.687,
+      "95% CI high": 712.363,
+      "p-value": 0.0
+    },
+    "obese": {
+      "coefficient ($)": 203.753,
+      "95% CI low": -364.026,
+      "95% CI high": 771.531,
+      "p-value": 0.482
+    },
+    "C(smoker)[T.yes]:obese": {
+      "coefficient ($)": 19854.75,
+      "95% CI low": 18726.796,
+      "95% CI high": 20982.705,
+      "p-value": 0.0
+    }
+  },
+  "diagnostics": {
+    "breusch_pagan_p": 0.8879342127142925,
+    "max_vif_excl_interaction": 2.132549365639217,
+    "influential_points_4_over_n": 90,
+    "flagged_with_large_positive_residual": 89,
+    "max_cooks_distance": 0.021929899847458953,
+    "interaction_without_flagged": 20065.53635430948
+  }
+}
